@@ -11,7 +11,6 @@ mining_reward = 10
 blockchain = []
 open_transactions = []
 owner = 'Mahdi'
-participant = {'Mahdi'}
 
 def load_data():
     global blockchain
@@ -179,8 +178,7 @@ while waiting_for_input:
     print('[1] Add a transaction.')
     print('[2] mine a new block.')
     print('[3] Show outputing block.')
-    print('[4] Show the participants')
-    print('[5] Check transaction vadility')
+    print('[4] Check transaction vadility')
     print('[q] Exit')
     print('-' * 40)
     user_input = input('Please choose of the options:')
@@ -199,8 +197,6 @@ while waiting_for_input:
     elif user_input == '3':
         output_block()
     elif user_input == '4':
-        print(participant)
-    elif user_input == '5':
         if verify_transactions():
             print('All transactions are valid')
         else:
