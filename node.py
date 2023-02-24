@@ -1,7 +1,7 @@
 from uuid import uuid4
 
 from blockchain import Blockchain
-from verification import Verification
+from utility.verification import Verification
 
 class Node:
     def __init__(self):
@@ -19,7 +19,7 @@ class Node:
         return user_input
 
     def print_blockchain_elements(self):
-        for block in self.blockchain.get_chain():
+        for block in self.blockchain.chain:
             print('Block output:')
             print(block)
         else:
@@ -58,7 +58,7 @@ class Node:
             else:
                 print('Your input is invalid! please choose again')
             
-            if not Verification.verify_chain(self.blockchain.get_chain()):
+            if not Verification.verify_chain(self.blockchain.chain):
                 print('Invalid Blockchain!')
                 break
             print('Your tottal balance:')
