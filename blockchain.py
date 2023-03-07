@@ -117,6 +117,8 @@ class Blockchain:
         #     'recipient': recipient,
         #     'amount': amount,
         # }
+        if self.hosting_node == None:
+            return False
         transaction = Transaction(sender, recipient, amount)
         if  Verification.verify_transaction(transaction, self.get_balance):
             self.__open_transactions.append(transaction)
@@ -125,6 +127,8 @@ class Blockchain:
         return False
 
     def mine_block(self):
+        if self.hosting_node == None:
+            return False
         last_block = self.__chain[-1]
         hashed_block = hash_block(last_block)
         proof = self.proof_of_work()

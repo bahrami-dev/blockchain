@@ -1,3 +1,5 @@
+"""Provide verification helper."""
+
 from utility.hash_utility import hash_string_256, hash_block
  
 
