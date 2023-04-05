@@ -115,12 +115,6 @@ class Blockchain:
         return self.__chain[-1]
 
     def add_transaction(self, recipient, sender, signature, amount=1.0):
-
-        # transaction = {
-        #     'sender': sender,
-        #     'recipient': recipient,
-        #     'amount': amount,
-        # }
         if self.hosting_node == None:
             return False
         transaction = Transaction(sender, recipient, signature, amount)
